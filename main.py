@@ -1,14 +1,19 @@
 # Boot.dev course project: Bookbot
+import sys
 from stats import get_book_text, get_words_count, get_chars_count, get_sorted_dict
 
 def main():
+    if len(sys.argv) != 2:
+         print("Usage: python3 main.py <path_to_book>")
+         sys.exit(1)
+    
     chars = {}
     sorted_list = []
     book = ""
     
     print("=========== BOOKBOT ===========")
 
-    with open("books/frankenstein.txt") as f:
+    with open(sys.argv[1]) as f:
         book = get_book_text(f)
         print(f"Analyzing book found at {f.name}")
 
