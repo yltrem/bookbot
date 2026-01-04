@@ -16,3 +16,18 @@ def get_chars_count(book):
             chars[c] += 1
 
     return chars
+
+def sort_on(dict):
+    return dict["num"]
+
+def get_sorted_dict(dict):
+    temp_list = []
+
+    for i in dict:
+        #print(f"{i}: {dict[i]}")
+        temp_list.append({"name" : i, "num": dict[i]})
+    
+    temp_list.sort(reverse=True, key=sort_on)
+    return temp_list
+
+
